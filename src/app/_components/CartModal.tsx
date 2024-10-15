@@ -17,7 +17,7 @@ const CartModal = () => {
       {!items ? (
         <div>{EMPTY_CART_LABEL}</div>
       ) : (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           <div className="flex gap-6">
             <Image
               src="/product.png"
@@ -47,11 +47,11 @@ const CartModal = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-between font-bold text-xl">
-            <h3>{SUB_TOTAL_LABEL}</h3>
-            <h3>$ 40.5</h3>
+          <div className="flex justify-between font-semibold text-xl">
+            <span>{SUB_TOTAL_LABEL}</span>
+            <span>$ 40.5</span>
           </div>
-          <div className="text-gray-500">{SHIPPING_REMINDER_LABEL}</div>
+          <p className="text-gray-500">{SHIPPING_REMINDER_LABEL}</p>
           <div className="flex justify-between font-semibold">
             <button className="border-2  border-gray-300  rounded-md py-4 px-6">
               {VIEW_CART_BTN}
