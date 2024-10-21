@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Card from '../_components/Card';
 import Filter from '../_components/Filter';
-const ListPage = () => {
+
+const ListPage = ({ searchParams }: { searchParams: any }) => {
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
       <div className="hidden bg-pink-50 px-4 md:flex h-64">

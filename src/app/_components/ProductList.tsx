@@ -15,14 +15,13 @@ const ProductList = async ({
     .limit(limit)
     .find();
 
-  console.log('categ', res.items[0].media?.mainMedia?.image?.url);
   return (
     <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
       {res.items.map((product: products.Product) => (
         <Card
           key={product._id}
           uniqueKey={product._id!}
-          link={`single-product/a`}
+          link={`/single-product/${product.slug}`}
           productUrl={product.media?.mainMedia?.image?.url! || '/product.png'}
           secondProductUrl={
             product.media?.items?.[1]?.image?.url ?? '/product.png'
