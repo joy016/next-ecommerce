@@ -1,7 +1,9 @@
 export interface CardTypes {
-    productUrl: string, 
-    secondProductUrl: string,
-    productName: string,
-    productPrice: string,
-    productDesc: string
+  uniqueKey: string;
+  productUrl: string;
+  secondProductUrl: string;
+  productName: string;
+  productPrice: string;
+  productDesc: string;
+  link: string;
 }

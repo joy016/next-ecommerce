@@ -9,24 +9,28 @@ const Card = ({
   productName,
   productPrice,
   productDesc,
+  link,
+  uniqueKey,
 }: CardTypes) => {
   return (
-    <Link href="/" className="w-full flex flex-col gap-4">
+    <Link href={link} className="w-full flex flex-col gap-4" key={uniqueKey}>
       <div className="relative w-full h-80">
         <Image
           src={productUrl}
           fill
           sizes="25vw"
           alt=""
-          className="absolute object-cover rounder-md hover:opacity-0 transition-opacity easy duration-500 z-10"
+          className="absolute object-cover rounded-md hover:opacity-0 transition-opacity easy duration-500 z-10"
         />
-        <Image
-          src={secondProductUrl}
-          fill
-          sizes="25vw"
-          alt=""
-          className="absolute object-cover rounder-md"
-        />
+        {secondProductUrl && (
+          <Image
+            src={secondProductUrl}
+            fill
+            sizes="25vw"
+            alt=""
+            className="absolute object-cover rounded-md"
+          />
+        )}
       </div>
       <div className="flex justify-between">
         <span className="font-medium">{productName}</span>

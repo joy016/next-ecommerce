@@ -1,35 +1,37 @@
+import { wixClientServer } from '@/lib/wixClientServer';
 import Card from './Card';
-const ProductList = () => {
+import { products } from '@wix/stores';
+const ProductList = async ({
+  limit,
+  categoryId,
+}: {
+  limit: number;
+  categoryId: string;
+}) => {
+  const wixClient = await wixClientServer();
+  const res = await wixClient.products
+    .queryProducts()
+    .eq('collectionIds', categoryId)
+    .limit(limit)
+    .find();
+
+  console.log('categ', res.items[0].media?.mainMedia?.image?.url);
   return (
     <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-      <Card
-        productUrl="https://images.pexels.com/photos/45982/pexels-photo-45982.jpeg"
-        secondProductUrl="https://images.pexels.com/photos/28259757/pexels-photo-28259757/free-photo-of-cozy-children-s-striped-sweater-on-hanger.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        productName="Digital Incense"
-        productPrice="$45"
-        productDesc="Perfect mint green, Organic material"
-      />
-      <Card
-        productUrl="https://images.pexels.com/photos/45982/pexels-photo-45982.jpeg"
-        secondProductUrl="https://images.pexels.com/photos/28259757/pexels-photo-28259757/free-photo-of-cozy-children-s-striped-sweater-on-hanger.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        productName="Digital Incense"
-        productPrice="$45"
-        productDesc="Perfect mint green, Organic material"
-      />
-      <Card
-        productUrl="https://images.pexels.com/photos/45982/pexels-photo-45982.jpeg"
-        secondProductUrl="https://images.pexels.com/photos/28259757/pexels-photo-28259757/free-photo-of-cozy-children-s-striped-sweater-on-hanger.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        productName="Digital Incense"
-        productPrice="$45"
-        productDesc="Perfect mint green, Organic material"
-      />
-      <Card
-        productUrl="https://images.pexels.com/photos/45982/pexels-photo-45982.jpeg"
-        secondProductUrl="https://images.pexels.com/photos/28259757/pexels-photo-28259757/free-photo-of-cozy-children-s-striped-sweater-on-hanger.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        productName="Digital Incense"
-        productPrice="$45"
-        productDesc="Perfect mint green, Organic material"
-      />
+      {res.items.map((product: products.Product) => (
+        <Card
+          key={product._id}
+          uniqueKey={product._id!}
+          link={`single-product/a`}
+          productUrl={product.media?.mainMedia?.image?.url! || '/product.png'}
+          secondProductUrl={
+            product.media?.items?.[1]?.image?.url ?? '/product.png'
+          }
+          productName={product.name!}
+          productPrice={product.price?.formatted?.price!}
+          productDesc={product.description!}
+        />
+      ))}
     </div>
   );
 };

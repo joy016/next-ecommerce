@@ -12,7 +12,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -24,7 +24,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -36,7 +36,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -48,7 +48,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -60,7 +60,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -72,7 +72,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -84,7 +84,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -96,7 +96,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -108,7 +108,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -120,7 +120,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -132,7 +132,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -144,7 +144,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>
@@ -156,7 +156,7 @@ const CategoryList = () => {
               fill
               sizes="25vw"
               alt=""
-              className="object-cover rounder-md"
+              className="object-cover rounded-md"
             />
           </div>
           <h4 className="text-sm font-semibold">T-shirts</h4>

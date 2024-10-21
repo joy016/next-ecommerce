@@ -28,7 +28,11 @@ const Navbar = () => {
 
           <div className="hidden xl:flex gap-4">
             {NAVBAR_MENU_BIGSCREEN.map((menu) => (
-              <Link key={menu.label} href={menu.link}>
+              <Link
+                key={menu.label}
+                href={menu.link}
+                className="hover:text-pinkColor"
+              >
                 {menu.label}
               </Link>
             ))}
