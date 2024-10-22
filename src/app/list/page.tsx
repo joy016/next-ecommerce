@@ -1,8 +1,18 @@
 import Image from 'next/image';
-import Card from '../_components/Card';
 import Filter from '../_components/Filter';
+import { wixClientServer } from '@/lib/wixClientServer';
+import ProductList from '../_components/ProductList';
 
-const ListPage = ({ searchParams }: { searchParams: any }) => {
+const ListPage = async ({
+  searchParams,
+}: {
+  searchParams: { cat: string };
+}) => {
+  const wixClient = await wixClientServer();
+  const categories = await wixClient.collections.getCollectionBySlug(
+    searchParams.cat || 'all-products'
+  );
+
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
       <div className="hidden bg-pink-50 px-4 md:flex h-64">
@@ -25,18 +35,10 @@ const ListPage = ({ searchParams }: { searchParams: any }) => {
 
       {/* bottom */}
       <div>
-        <h1 className="text-2xl font-semibold mt-12">All Products for You!</h1>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          <Card
-            uniqueKey="1"
-            link={`/single-product/${1}`}
-            productUrl="https://images.pexels.com/photos/45982/pexels-photo-45982.jpeg"
-            secondProductUrl="https://images.pexels.com/photos/28259757/pexels-photo-28259757/free-photo-of-cozy-children-s-striped-sweater-on-hanger.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            productName="Digital Incense"
-            productPrice="$45"
-            productDesc="Perfect mint green, Organic material"
-          />
-        </div>
+        <h1 className="text-2xl font-semibold mt-12">
+          {`${categories.collection?.name} for You!`}
+        </h1>
+        <ProductList limit={8} categoryId={categories.collection?._id!} />
       </div>
     </div>
   );
